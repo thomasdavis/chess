@@ -1,0 +1,25 @@
+info it worked if it ends with ok
+verbose cli [ 'node', '/usr/bin/npm', 'install', '-g', '-f' ]
+info using npm@1.0.20
+info using node@v0.4.10
+verbose /usr/bin/node node symlink
+verbose config file /home/thomas/.npmrc
+verbose config file /usr/etc/npmrc
+silly exec /usr/bin/node "/usr/lib/node_modules/npm/bin/npm-get-uid-gid.js" "nobody" 1000
+silly output from getuid/gid {"uid":65534,"gid":1000}
+silly output from getuid/gid 
+verbose into /usr/lib [ '.' ]
+verbose cache add [ '.', null ]
+ERR! Could not install: .
+ERR! Error: ENOENT, No such file or directory 'package.json'
+ERR! Report this *entire* log at:
+ERR!     <http://github.com/isaacs/npm/issues>
+ERR! or email it to:
+ERR!     <npm-@googlegroups.com>
+ERR! 
+ERR! System Linux 2.6.38-8-generic
+ERR! command "node" "/usr/bin/npm" "install" "-g" "-f"
+ERR! cwd /home/thomas/repos/chess
+ERR! node -v v0.4.10
+ERR! npm -v 1.0.20
+verbose exit [ 2, true ]
