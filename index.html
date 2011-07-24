@@ -22,7 +22,20 @@
         <div class="container">
             
 			<div class="sideMenu">
-				My menu
+				Thomas Davis - Application
+				<ul>
+					<li><a href="docs">Annotated Source Code</a></li>
+					<li><a href="tests">Test Suite</a></li>
+				</ul>
+				<h3>Chess Controls</h3>
+				<p>Buggy example of using the API</p>
+				<input type="button" value="clearBoard" id="clearBoard" />
+				<input type="button" value="resetBoard" id="resetBoard" />
+				<input value="H7" id="oldposition" />
+				<input value="H5" id="newposition" />
+				<input type="button" value="changePosition" id="changePosition" />
+				<input value="D1" id="lookup" />
+				<input type="button" value="lookupPosition" id="lookupPosition" />
 			</div>
 
 
@@ -30,24 +43,24 @@
 				
 				<table id="chess_board" cellpadding="0" cellspacing="0">
 					<tr>
-						<td id="A8"><a href="#" class="rook black">&#9820;</a></td>
-						<td id="B8"><a href="#" class="night black">&#9822;</a></td>
-						<td id="C8"><a href="#" class="bishop black">&#9821;</a></td>
-						<td id="D8"><a href="#" class="king black">&#9819;</a></td>
-						<td id="E8"><a href="#" class="queen black">&#9818;</a></td>
-						<td id="F8"><a href="#" class="bishop black">&#9821;</a></td>
-						<td id="G8"><a href="#" class="night black">&#9822;</a></td>
-						<td id="H8"><a href="#" class="rook black">&#9820;</a></td>
+						<td id="A8"></td>
+						<td id="B8"></td>
+						<td id="C8"></td>
+						<td id="D8"></td>
+						<td id="E8"></td>
+						<td id="F8"></td>
+						<td id="G8"></td>
+						<td id="H8"></td>
 					</tr>
 					<tr>
-						<td id="A7"><a href="#" class="pawn black">&#9823;</a></td>
-						<td id="B7"><a href="#" class="pawn black">&#9823;</a></td>
-						<td id="C7"><a href="#" class="pawn black">&#9823;</a></td>
-						<td id="D7"><a href="#" class="pawn black">&#9823;</a></td>
-						<td id="E7"><a href="#" class="pawn black">&#9823;</a></td>
-						<td id="F7"><a href="#" class="pawn black">&#9823;</a></td>
-						<td id="G7"><a href="#" class="pawn black">&#9823;</a></td>
-						<td id="H7"><a href="#" class="pawn black">&#9823;</a></td>
+						<td id="A7"></td>
+						<td id="B7"></td>
+						<td id="C7"></td>
+						<td id="D7"></td>
+						<td id="E7"></td>
+						<td id="F7"></td>
+						<td id="G7"></td>
+						<td id="H7"></td>
 					</tr>
 					<tr>
 						<td id="A6"></td>
@@ -90,29 +103,32 @@
 						<td id="H3"></td>
 					</tr>
 					<tr>
-						<td id="A2"><a href="#" class="pawn white">&#9817;</a></td>
-						<td id="B2"><a href="#" class="pawn white">&#9817;</a></td>
-						<td id="C2"><a href="#" class="pawn white">&#9817;</a></td>
-						<td id="D2"><a href="#" class="pawn white">&#9817;</a></td>
-						<td id="E2"><a href="#" class="pawn white">&#9817;</a></td>
-						<td id="F2"><a href="#" class="pawn white">&#9817;</a></td>
-						<td id="G2"><a href="#" class="pawn white">&#9817;</a></td>
-						<td id="H2"><a href="#" class="pawn white">&#9817;</a></td>
+						<td id="A2"></td>
+						<td id="B2"></td>
+						<td id="C2"></td>
+						<td id="D2"></td>
+						<td id="E2"></td>
+						<td id="F2"></td>
+						<td id="G2"></td>
+						<td id="H2"></td>
 					</tr>
 					<tr>
-						<td id="A1"><a href="#" class="rook white">&#9814;</a></td>
-						<td id="B1"><a href="#" class="night white">&#9816;</a></td>
-						<td id="C1"><a href="#" class="bishop white">&#9815;</a></td>
-						<td id="D1"><a href="#" class="king white">&#9813;</a></td>
-						<td id="E1"><a href="#" class="wife white">&#9812;</a></td>
-						<td id="F1"><a href="#" class="bishop white">&#9815;</a></td>
-						<td id="G1"><a href="#" class="night white">&#9816;</a></td>
-						<td id="H1"><a href="#" class="rook white">&#9814;</a></td>
+						<td id="A1"></td>
+						<td id="B1"></td>
+						<td id="C1"></td>
+						<td id="D1"></td>
+						<td id="E1"></td>
+						<td id="F1"></td>
+						<td id="G1"></td>
+						<td id="H1"></td>
 					</tr>
 				</table>
             </div>
         </div>
-	<script src="js/chess.js"></script>
+       <!-- Include the ChessBoard Api -->
+		<script src="js/chess.js"></script>
+       <!-- Include the Backbone.js MVC's -->
+		<script src="js/game.js"></script>
     </body>
 
 

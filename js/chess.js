@@ -1,5 +1,8 @@
-// Thomas Davis - 2011
 // Ephox Job Application Entry
+// ChessBoard API
+// (c) 2011 Thomas Davis <thomasalwyndavis@gmail.com>
+// http://thomasdavis.github.com/chess/
+
 
 // Wrap API in self executing anonymous function to keep globals tidy
 (function(){
@@ -7,6 +10,7 @@
 		// Save a reference to the root
 		var root = this;
 		
+		// Pre-configure a standard chessboard layout
 		var set_board = {
 			// Black pieces
 			A8: "BR", B8: "BKN", C8: "BB", D8: "BK", E8: "BQ", F8: "BB", G8: "BKN", H8: "BR",
@@ -17,22 +21,27 @@
 			A1: "WR", B1: "WKN", C1: "WB", D1: "WK", E1: "WQ", F1: "WB", G1: "WKN", H1: "WR"
 		}
 		
+		// A simple lookup object for piece labels
+		// FullName, White ASCII, Black ASCII
 		var fullpieces = {
-			"K": "King",
-			"Q": "Queen",
-			"B": "Bishop",
-			"KN": "Knight",
-			"R": "Rook",
-			"P": "Pawn"
+			"K": ["King", "&#9813;", "&#9819;"],
+			"Q": ["Queen", "&#9812;", "&#9818;"],
+			"B": ["Bishop", "&#9815;", "&#9821;"],
+			"KN": ["Knight", "&#9816;", "&#9822;"],
+			"R": ["Rook", "&#9814;", "&#9820;"],
+			"P": ["Pawn", "&#9817;", "&#9823;"]
 		}
 		
+		// Create a global variable to access the ChessBoard library at anytime
 		var ChessBoard = root.ChessBoard = function( positions ) {
 			
-			// If any positions are passed to the Board, populate them
-			// Used jQuery's deep copy method
+			// If any positions are passed to the board use them for the setup.
+			// Otherwise load the board with a standard setup. This allows for saving and starting of games
 			this.positions = positions || $.extend(true, {}, set_board);
 			
+			
 			var chessboard = this;
+			chessboard.fullpieces = fullpieces;
 			
 			this.lookupPosition = function( position ) {
 				// Returns the piece that is at a certain position on the grid otherwise 'empty'
@@ -53,7 +62,7 @@
 			this.resetBoard = function( ){
 				// Resets the board to a configured ready to play board
 				delete chessboard.positions;
-				chessboard.positions = set_board;
+				chessboard.positions = $.extend(true, {}, set_board);
 			}
 			
 			this.clearBoard = function( ){
@@ -62,8 +71,4 @@
 			}
 		};
 
-
-		
 }).call(this);
-
-
